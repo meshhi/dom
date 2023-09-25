@@ -20,7 +20,6 @@ export default class Game {
     }
 
     initBoard() {
-        console.log(this)
         this.board = document.createElement('div');
         this.board.classList.add('board');
         for (let i = 0; i < 16; i++) {
