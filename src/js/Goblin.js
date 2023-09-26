@@ -29,8 +29,10 @@ export class Goblin {
     }, 1000);
   };
 
-  beatUp = () => {
+  beatUp = (board) => {
+    this.goblin.remove();
     clearInterval(this.isJumping);
+    this.jumpOverBoard(board);
     console.log("Goblin beat up!");
   };
 }

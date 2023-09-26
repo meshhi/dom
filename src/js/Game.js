@@ -1,5 +1,6 @@
 import "./Game.css";
 import goblin from "./Goblin";
+import player from "./Player";
 
 export default class Game {
   start() {
@@ -7,18 +8,20 @@ export default class Game {
     goblin.jumpOverBoard(this.board);
     this.board.addEventListener("click", (e) => {
       if (e.target.classList.contains("goblin")) {
-        goblin.beatUp();
-        const win = document.createElement("div");
-        win.classList.add("win");
-        document.body.appendChild(win);
-        win.innerHTML = "You win!";
-        win.addEventListener(
-          "click",
-          (e) => {
-            e.preventDefault();
-          },
-          true
-        );
+        player.scoreUp();
+        document.querySelector(".score").innerHTML = player.score;
+        goblin.beatUp(this.board);
+        // const win = document.createElement("div");
+        // win.classList.add("win");
+        // document.body.appendChild(win);
+        // win.innerHTML = "You win!";
+        // win.addEventListener(
+        //   "click",
+        //   (e) => {
+        //     e.preventDefault();
+        //   },
+        //   true
+        // );
       }
     });
   }

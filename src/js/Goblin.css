@@ -1,4 +1,7 @@
 .goblin {
     width: 100%;
     height: 100%;
+    cursor: url('../img/hammer_3.png') 200 200, pointer;
 }
+
+
