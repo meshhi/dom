@@ -11,17 +11,6 @@ export default class Game {
         player.scoreUp();
         document.querySelector(".score").innerHTML = player.score;
         goblin.beatUp(this.board);
-        // const win = document.createElement("div");
-        // win.classList.add("win");
-        // document.body.appendChild(win);
-        // win.innerHTML = "You win!";
-        // win.addEventListener(
-        //   "click",
-        //   (e) => {
-        //     e.preventDefault();
-        //   },
-        //   true
-        // );
       }
     });
   }
