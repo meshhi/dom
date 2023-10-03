@@ -28,15 +28,21 @@ export class Goblin {
           );
         }
         this.goblin.remove();
-        let newCurrentPosition = Math.floor(
-          Math.random() * board.children.length
-        );
-        while (newCurrentPosition == this.currentPosition) {
-          newCurrentPosition = Math.floor(
-            Math.random() * board.children.length
-          );
+
+
+        let tempPositionArray = [];
+        for (let i = 1; i < board.children.length; i++) {
+          tempPositionArray.push(i)
         }
+        let currPosition = tempPositionArray.indexOf(this.currentPosition);
+        if (currPosition) {
+          tempPositionArray = tempPositionArray.filter(item => item !== currPosition);
+        }
+        let newCurrentPosition = Math.floor(
+          Math.random() * tempPositionArray.length
+        );
         this.currentPosition = newCurrentPosition;
+
         board.children[this.currentPosition].append(this.goblin);
         this.appearTime += 1;
       } catch (e) {
